@@ -1,9 +1,6 @@
 {
   "name": "vast-client",
-  "author": "Olivier Poitrey <rs@dailymotion.com>",
-  "contributors": [
-    "Elia Maino <eliamaino@gmail.com>"
-  ],
+  "author": "Sina Moammar",
   "version": "2.5.1",
   "description": "JavaScript VAST Client",
   "keywords": [
@@ -16,13 +13,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dailymotion/vast-client-js"
+    "url": "https://github.com/sina-moammar/vast-client-js.git"
   },
   "license": "MIT",
   "engines": {
     "node": ">=8.9.4"
   },
-  "main": "dist/vast-client-node.min.js",
+  "main": "src/index.js",
   "module": "src/index.js",
   "browser": {
     "dist/vast-client.min.js": "dist/vast-client.min.js"
@@ -56,6 +53,7 @@
     "sinon": "^2.3.6"
   },
   "dependencies": {
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.1.27",
+    "events": "^3.0.0"
   }
 }

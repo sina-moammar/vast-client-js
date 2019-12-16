@@ -1,3 +1,6 @@
+import {DOMParser} from "xmldom";
+var domParser = new DOMParser();
+
 function xhr() {
   try {
     const request = new window.XMLHttpRequest();
@@ -30,7 +33,8 @@ function get(url, options, cb) {
     request.onreadystatechange = function() {
       if (request.readyState === 4) {
         if (request.status === 200) {
-          cb(null, request.responseXML);
+          const xml = domParser.parseFromString(request.responseText);
+          cb(null, xml);
         } else {
           cb(new Error(`XHRURLHandler: ${request.statusText}`));
         }

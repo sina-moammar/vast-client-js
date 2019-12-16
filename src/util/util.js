@@ -3,8 +3,9 @@ function track(URLTemplates, variables, options) {
 
   URLs.forEach(URL => {
     if (typeof window !== 'undefined' && window !== null) {
-      const i = new Image();
-      i.src = URL;
+      fetch(URL).catch(err => {
+        console.log('could not track url: ' + URL, err);
+      });
     }
   });
 }
