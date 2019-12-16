@@ -19,10 +19,6 @@ function supported() {
 }
 
 function get(url, options, cb) {
-  if (window.location.protocol === 'https:' && url.indexOf('http://') === 0) {
-    return cb(new Error('XHRURLHandler: Cannot go from HTTPS to HTTP.'));
-  }
-
   try {
     const request = xhr();
 
